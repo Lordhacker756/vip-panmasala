@@ -10,7 +10,7 @@ export default async function Navbar() {
     <nav className="w-[100%]">
       <ul className="flex items-center justify-between p-4">
         <li className="w-[10vw] h-[10vh] relative">
-          <Image src={"/assests/asset-1.png"} alt="random" fill={true} />
+          <Image src={"/assets/asset-1.png"} alt="random" fill={true} />
         </li>
         <li>
           <ul className="flex gap-8 items-center justify-center">

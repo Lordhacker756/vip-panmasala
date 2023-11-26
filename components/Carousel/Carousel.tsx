@@ -22,6 +22,7 @@ export default function Carousel() {
       <Swiper
         pagination={{
           dynamicBullets: true,
+          clickable: true,
         }}
         navigation={true}
         modules={[Pagination, Navigation]}

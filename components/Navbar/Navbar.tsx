@@ -15,11 +15,9 @@ export default async function Navbar() {
         <li>
           <ul className="flex gap-8 items-center justify-center">
             <li className="text-white text-lg hover:text-theme_gold">Buy</li>
+            <li className="text-white text-lg hover:text-theme_gold">Cart</li>
             <li className="text-white text-lg hover:text-theme_gold">
-              Subscribe
-            </li>
-            <li className="text-white text-lg hover:text-theme_gold">
-              Rewards
+              Contact Us
             </li>
           </ul>
         </li>

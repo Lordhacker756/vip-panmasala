@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 import "./style.css";
 
 // import required modules
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import Card from "../Card/Card";
 
 export default function Cards() {
@@ -23,7 +23,11 @@ export default function Cards() {
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         className="mySwiper"
         loop={true}
       >

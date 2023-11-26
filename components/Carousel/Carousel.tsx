@@ -6,17 +6,14 @@ import Image from "next/image";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 import "./style.css";
 
 // import required modules
-import { Pagination, Navigation } from "swiper/modules";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
 export default function Carousel() {
-  const loaderImage = () => {
-    return `https://placehold.co/2000x1900/png`;
-  };
-
   return (
     <>
       <Swiper
@@ -24,14 +21,15 @@ export default function Carousel() {
           dynamicBullets: true,
           clickable: true,
         }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
-        loop={true}
+        spaceBetween={30}
+        centeredSlides={true}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
       >
         <SwiperSlide>
           <Image

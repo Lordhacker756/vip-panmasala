@@ -25,7 +25,7 @@ function Ingredient({
   return (
     <section
       key={id}
-      className="w-full h-[70vh] mx-auto flex items-center px-[10%]"
+      className="w-full  h-[40vh]  lg:h-[70vh] mx-auto flex items-center px-[10%]"
       data-aos={id % 2 === 0 ? "fade-down-right" : "fade-down-left"}
       data-aos-duration="5000"
       style={{

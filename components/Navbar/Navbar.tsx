@@ -9,7 +9,7 @@ export default async function Navbar() {
   return (
     <nav className="w-[100%]">
       <ul className="flex items-center justify-between p-4">
-        <li className="w-[10vw] h-[10vh] relative">
+        <li className="lg:w-[10vw] lg:h-[10vh] w-[15vw] h-[5vh] relative">
           <Image src={"/assets/asset-1.png"} alt="random" fill={true} />
         </li>
         <li>

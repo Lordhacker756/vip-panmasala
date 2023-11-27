@@ -3,18 +3,18 @@ import React from "react";
 function Footer() {
   return (
     <div>
-      <div className="border-2 border-theme_gold w-[90vw] py-20 px-0 m-5 rounded-md flex justify-evenly mt-8">
-        <div className="border-r-2 border-theme_gold px-16">
+      <div className="border-2 border-theme_gold w-[90vw] py-20 px-0 m-5 rounded-md flex justify-evenly mt-8 flex-wrap gap-6">
+        <div className="lg:border-r-2 border-theme_gold px-16">
           <p className="font-bold text-theme_gold text-xl">Whats App Us</p>
           <p>9810582570</p>
         </div>
 
-        <div className="border-r-2 border-theme_gold px-10">
+        <div className="lg:border-r-2 border-theme_gold px-10">
           <p className="font-bold text-theme_gold text-xl">Customer Care</p>
           <p>0120-4032570</p>
         </div>
 
-        <div className="border-r-2 border-theme_gold px-10">
+        <div className="lg:border-r-2 border-theme_gold px-10">
           <p className="font-bold text-theme_gold text-xl">Online Purchase</p>
           <p>shop@dsgroup.com</p>
         </div>

@@ -6,6 +6,12 @@ body {
   position: relative;
   height: 100%;
 }
+/* Styles for larger screens */
+@media (max-width: 768px) {
+  .swiper-slide {
+    height: 200px !important;
+  }
+}
 
 .swiper {
   width: 100%;
@@ -16,8 +22,6 @@ body {
   text-align: center;
   font-size: 18px;
   height: 500px;
-
-  /* Center slide text vertically */
   display: flex;
   justify-content: center;
   align-items: center;

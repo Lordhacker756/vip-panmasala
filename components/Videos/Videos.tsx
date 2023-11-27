@@ -13,12 +13,13 @@ import "./style.css";
 // import required modules
 import { Autoplay, Pagination } from "swiper/modules";
 import Card from "../Card/Card";
+import VideoCard from "../VideoCard/VideoCard";
 
-export default function Cards() {
+export default function Video() {
   return (
     <>
       <Swiper
-        slidesPerView={3}
+        slidesPerView={4}
         spaceBetween={30}
         pagination={{
           clickable: true,
@@ -31,19 +32,19 @@ export default function Cards() {
         loop={true}
       >
         <SwiperSlide>
-          <Card img={"pdt1"} />
+          <VideoCard />
         </SwiperSlide>
         <SwiperSlide>
-          <Card img={"pdt2"} />
+          <VideoCard />
         </SwiperSlide>
         <SwiperSlide>
-          <Card img={"pdt3"} />
+          <VideoCard />
         </SwiperSlide>
         <SwiperSlide>
-          <Card img={"pdt5"} />
+          <VideoCard />
         </SwiperSlide>
         <SwiperSlide>
-          <Card img={"pdt6"} />
+          <VideoCard />
         </SwiperSlide>
       </Swiper>
     </>

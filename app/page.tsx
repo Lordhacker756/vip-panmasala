@@ -7,14 +7,14 @@ import Video from "@/components/Videos/Videos";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center py-5">
+    <main className="flex min-h-screen flex-col items-center py-5 w-[100vw] overflow-x-hidden">
       <Navbar />
       <Carousel />
 
       <h1 className="text-3xl text-white mt-20 font-bold">Our Products</h1>
       <Cards />
 
-      {/* <Ingredients /> */}
+      <Ingredients />
 
       <Video />
 

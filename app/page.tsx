@@ -7,7 +7,7 @@ import Video from "@/components/Videos/Videos";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center py-5 w-[100vw] overflow-x-hidden">
+    <main className="flex min-h-screen flex-col items-center py-5 max-w-[100vw] overflow-x-hidden">
       <Navbar />
       <Carousel />
 

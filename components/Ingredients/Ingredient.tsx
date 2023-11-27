@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Image, { StaticImageData } from "next/image";
@@ -10,6 +10,7 @@ type IngredientProps = {
   Color: string;
   id: number;
 };
+import { motion, useAnimation, useInView } from "framer-motion";
 function Ingredient({
   BackgroundImage,
   MainImage,
@@ -17,24 +18,44 @@ function Ingredient({
   id,
   Color,
 }: IngredientProps) {
+  const animationControl = useAnimation();
+  const ref = useRef<HTMLDivElement>();
+  //@ts-ignore
+  const IsinView = useInView(ref, { once: true });
   useEffect(() => {
-    Aos.init({
-      once: true,
-    });
-  });
+    if (IsinView) {
+      animationControl.start("animate");
+    }
+  }, [IsinView]);
+
   return (
     <section
       key={id}
-      className="w-full  h-[60vh]  lg:h-[70vh] mx-auto flex md:flex-row flex-col items-center justify-center px-[10%]"
-      data-aos={id % 2 === 0 ? "fade-down-right" : "fade-down-left"}
-      data-aos-duration="5000"
+      className="w-full  h-[60vh]  lg:h-[70vh] mx-auto flex md:flex-row flex-col items-center justify-center px-[10%] "
       style={{
         backgroundImage: `url(${BackgroundImage.src})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
     >
-      <div className={`flex  justify-between gap-4 flex-wrap    w-full`}>
+      <motion.div
+        className={`flex  justify-between gap-4 flex-wrap    w-full`}
+        variants={{
+          initial: {
+            x: id % 2 != 0 ? "100%" : "-100%",
+          },
+          animate: {
+            x: id % 2 != 0 ? "0%" : "0%",
+          },
+        }}
+        initial={"initial"}
+        animate={animationControl}
+        transition={{
+          type: "spring",
+        }}
+        //@ts-ignore
+        ref={ref}
+      >
         <Image
           src={MainImage}
           alt="Betelnut"
@@ -62,7 +83,7 @@ function Ingredient({
             corrupti asperiores illum enim suscipit.
           </p>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

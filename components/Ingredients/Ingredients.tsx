@@ -1,7 +1,8 @@
 "use client";
 import { IngredientsData } from "@/app/constants/IngredientsData";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Aos from "aos";
+import { motion, useAnimation, useInView } from "framer-motion";
 import "aos/dist/aos.css";
 import Ingredient from "./Ingredient";
 import SandleWood from "../../public/assets/SandleWood.png";
@@ -11,18 +12,17 @@ import CardamomSeeds from "../../public/assets/CardamomSeeds.png";
 import Product from "../../public/assets/Product.png";
 import Image from "next/image";
 function Ingredients() {
+  const onScollControlls = useAnimation();
+  const ref = useRef<HTMLDivElement>();
+  //@ts-ignore
+  const IsinView = useInView(ref, { once: true });
   useEffect(() => {
-    Aos.init({
-      once: true,
-    });
-  });
+    if (IsinView) {
+      onScollControlls.start("visible");
+    }
+  }, [IsinView]);
   return (
-    <div
-      className="flex flex-col  w-full"
-      data-aos="fade-up"
-      data-aos-duration="6000"
-      data-aos-anchor-placement="top-bottom"
-    >
+    <div className="flex flex-col  w-full">
       {IngredientsData.map((ingredient, index) => {
         return <Ingredient {...ingredient} key={index} />;
       })}
@@ -59,7 +59,24 @@ function Ingredients() {
             className="w-[100px] sm:w-[200px] "
           />
         </div>
-        <Image src={Product} alt="Product" className="sm:w-[25vw] w-[60vw]" />
+        <motion.div
+          variants={{
+            hidden: {
+              y: -100,
+              scale: 0.5,
+            },
+            visible: {
+              y: 0,
+              scale: 1,
+            },
+          }}
+          initial="hidden"
+          animate={onScollControlls}
+          //@ts-ignore
+          ref={ref}
+        >
+          <Image src={Product} alt="Product" className="sm:w-[25vw] w-[60vw]" />
+        </motion.div>
       </div>
       <h2 className="text-white text-3xl font-bold my-10 w-full text-center">
         Experience <span className="text-theme_gold">Royality ✨</span>

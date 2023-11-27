@@ -9,8 +9,13 @@ export default async function Navbar() {
   return (
     <nav className="w-full">
       <ul className="flex flex-col md:flex-row items-center justify-between p-4">
-        <li className="w-20 h-20 md:w-32 md:h-32 relative">
-          <Image src={"/assets/asset-1.png"} alt="random" fill={true} />
+        <li className="w-20  md:w-32  relative">
+          <Image
+            src={"/assets/asset-1.png"}
+            alt="random"
+            width={150}
+            height={50}
+          />
         </li>
         <li className="mt-4 md:mt-0">
           <ul className="flex gap-4 md:gap-8 items-center justify-center">

@@ -25,7 +25,7 @@ function Ingredient({
   return (
     <section
       key={id}
-      className="w-full  h-[40vh]  lg:h-[70vh] mx-auto flex items-center px-[10%]"
+      className="w-full  h-[60vh]  lg:h-[70vh] mx-auto flex md:flex-row flex-col items-center justify-center px-[10%]"
       data-aos={id % 2 === 0 ? "fade-down-right" : "fade-down-left"}
       data-aos-duration="5000"
       style={{
@@ -34,20 +34,34 @@ function Ingredient({
         backgroundSize: "cover",
       }}
     >
-      <div
-        className={`flex  justify-center gap-4 flex-col   w-full ${
-          id % 2 !== 0 ? "items-start" : "items-end"
-        }`}
-      >
-        <h1
-          className={`text-3xl font-semibold `}
-          style={{
-            color: Color,
-          }}
+      <div className={`flex  justify-between gap-4 flex-wrap    w-full`}>
+        <Image
+          src={MainImage}
+          alt="Betelnut"
+          width={300}
+          height={300}
+          className={id % 2 !== 0 ? `order-2` : "order-1"}
+        />
+        <div
+          className={`flex flex-col items-start justify-center  ${
+            id % 2 !== 0 ? "order-1" : "order-2"
+          }`}
         >
-          {MainText}
-        </h1>
-        <Image src={MainImage} alt="Betelnut" width={300} height={300} />
+          <h1
+            className={`text-3xl font-semibold `}
+            style={{
+              color: Color,
+            }}
+          >
+            {MainText}
+          </h1>
+          <p className=" text-gray-200 md:max-w-[30vw] w-[80%]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dicta
+            quidem veritatis provident. Minus nihil exercitationem ducimus
+            dolorem adipisci expedita fuga, incidunt quae! Id, veritatis
+            corrupti asperiores illum enim suscipit.
+          </p>
+        </div>
       </div>
     </section>
   );

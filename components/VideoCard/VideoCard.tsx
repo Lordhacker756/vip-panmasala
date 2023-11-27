@@ -11,7 +11,7 @@ function VideoCard() {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       ></iframe>
       <p className="text-theme_gold font-bold">The Tasts of Royalty</p>
-      <p className="text-sm">
+      <p className="text-sm w-[80%] text-center">
         Check out the sneak peak of our labs of mastery live at youtube
       </p>
     </div>

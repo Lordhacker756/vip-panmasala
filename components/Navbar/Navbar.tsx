@@ -13,6 +13,7 @@ import {
   AiFillYoutube,
   AiOutlineInstagram,
 } from "react-icons/ai";
+import Link from "next/link";
 
 export default function Navbar() {
   const [showSideMenu, setShowSideMenu] = useState(false);
@@ -40,16 +41,16 @@ export default function Navbar() {
           <li className="mt-4 md:mt-0">
             <ul className="flex gap-4 md:gap-8 items-center justify-center">
               <li className="text-theme_gold text-lg hover:text-white cursor-pointer">
-                Buy
+                <Link href="/buy">Buy</Link>
               </li>
               <li className="text-theme_gold text-lg hover:text-white cursor-pointer">
-                Acquiesce
+                <Link href="/acquiesce">Acquiesce</Link>
               </li>
               <li
                 className="text-theme_gold text-lg hover:text-white cursor-pointer"
                 onClick={closeSideMenu}
               >
-                Contact Us
+                <Link href="/contact">Contact Us</Link>
               </li>
             </ul>
           </li>

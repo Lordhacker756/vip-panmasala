@@ -8,7 +8,6 @@ import Video from "@/components/Videos/Videos";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center pt-5 max-w-[100vw] overflow-x-hidden">
-      <Navbar />
       <Carousel />
 
       <h1 className="text-3xl text-white mt-20 font-bold">
@@ -19,8 +18,6 @@ export default function Home() {
       <Ingredients />
 
       {/* <Video /> */}
-
-      <Footer />
     </main>
   );
 }

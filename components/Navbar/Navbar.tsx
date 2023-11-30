@@ -1,54 +1,128 @@
-"use server";
+"use client";
+import { useState } from "react";
 import Image from "next/image";
 import { CiUser, CiSearch } from "react-icons/ci";
 import { TbBus } from "react-icons/tb";
 import { TiShoppingCart } from "react-icons/ti";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { FaChevronDown } from "react-icons/fa";
+import { IoMdClose } from "react-icons/io";
+import {
+  AiFillFacebook,
+  AiOutlineTwitter,
+  AiFillYoutube,
+  AiOutlineInstagram,
+} from "react-icons/ai";
 
-export default async function Navbar() {
+export default function Navbar() {
+  const [showSideMenu, setShowSideMenu] = useState(false);
+
+  const toggleSideMenu = () => {
+    setShowSideMenu(!showSideMenu);
+  };
+
+  const closeSideMenu = () => {
+    setShowSideMenu(false);
+  };
+
   return (
-    <nav className="w-full">
-      <ul className="flex flex-col md:flex-row items-center justify-between p-4">
-        <li className="w-20  md:w-32  relative">
-          <Image
-            src={"/assets/asset-1.png"}
-            alt="random"
-            width={150}
-            height={50}
-          />
-        </li>
-        <li className="mt-4 md:mt-0">
-          <ul className="flex gap-4 md:gap-8 items-center justify-center">
-            <li className="text-white text-lg hover:text-theme_gold">Buy</li>
-            <li className="text-white text-lg hover:text-theme_gold">Cart</li>
-            <li className="text-white text-lg hover:text-theme_gold">
-              Contact Us
-            </li>
-          </ul>
-        </li>
-        <li className="mt-4 md:mt-0">
-          <ul className="flex items-center justify-center gap-4">
-            <li className="border-r-2 border-r-gray-500 px-4 cursor-pointer ">
-              <CiUser className="text-2xl text-white hover:text-theme_gold" />
-            </li>
-            <li className="border-r-2 border-r-gray-500 px-4 cursor-pointer">
-              <TbBus className="text-2xl text-white hover:text-theme_gold" />
-            </li>
-            <li className="border-r-2 border-r-gray-500 px-4 cursor-pointer">
-              <CiSearch className="text-2xl text-white hover:text-theme_gold" />
-            </li>
-            <li className="border-r-2 border-r-gray-500 px-4 cursor-pointer relative">
-              <TiShoppingCart className="text-2xl text-white hover:text-theme_gold " />
-              <p className="px-[4px]  absolute bg-white rounded-full text-black -top-2 right-2">
-                0
-              </p>
-            </li>
-            <li className="px-2 cursor-pointer">
-              <RxHamburgerMenu className="text-2xl text-white hover:text-theme_gold" />
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
+    <>
+      <nav className="w-full">
+        <ul className="flex flex-col md:flex-row items-center justify-between px-4">
+          <li className="w-20 md:w-32 relative">
+            <Image
+              src={"/assets/logo.webp"}
+              alt="random"
+              width={100}
+              height={40}
+            />
+          </li>
+          <li className="mt-4 md:mt-0">
+            <ul className="flex gap-4 md:gap-8 items-center justify-center">
+              <li className="text-theme_gold text-lg hover:text-white cursor-pointer">
+                Buy
+              </li>
+              <li className="text-theme_gold text-lg hover:text-white cursor-pointer">
+                Acquiesce
+              </li>
+              <li
+                className="text-theme_gold text-lg hover:text-white cursor-pointer"
+                onClick={closeSideMenu}
+              >
+                Contact Us
+              </li>
+            </ul>
+          </li>
+          <li className="my-4 md:mt-0">
+            <ul className="flex items-center justify-center gap-4">
+              <li className="border-r-2 border-r-gray-500 px-4 cursor-pointer">
+                <CiUser className="text-2xl text-theme_gold hover:text-white" />
+              </li>
+              <li className="border-r-2 border-r-gray-500 px-4 cursor-pointer">
+                <TbBus className="text-2xl text-theme_gold hover:text-white" />
+              </li>
+              <li className="border-r-2 border-r-gray-500 px-4 cursor-pointer">
+                <CiSearch className="text-2xl text-theme_gold hover:text-white" />
+              </li>
+              <li className="border-r-2 border-r-gray-500 px-4 cursor-pointer relative">
+                <TiShoppingCart className="text-2xl text-theme_gold hover:text-white" />
+                <p className="px-[4px] absolute bg-white rounded-full text-black -top-2 right-2">
+                  0
+                </p>
+              </li>
+              <li className="px-2 cursor-pointer" onClick={toggleSideMenu}>
+                <RxHamburgerMenu className="text-2xl text-theme_gold hover:text-white" />
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      {/* Side Menu */}
+      {showSideMenu && (
+        <div className="fixed top-0 right-0 h-full w-full bg-black bg-opacity-50 z-50">
+          <div className="fixed top-0 right-0 h-full w-64 bg-[#010317] p-4">
+            <div className="flex justify-between items-center mb-4">
+              <div className="text-theme_gold text-2xl font-bold">VIP</div>
+              <div
+                className="cursor-pointer"
+                onClick={() => setShowSideMenu(false)}
+              >
+                <IoMdClose className="text-3xl text-white hover:text-theme_gold" />
+              </div>
+            </div>
+            <ul className="text-white">
+              <li className="mb-3 flex item-center cursor-pointer">Home</li>
+              <li className="mb-3 flex item-center cursor-pointer">
+                Our Story
+              </li>
+              <li className="mb-3 relative flex flex-col h-[120px]">
+                <div className="flex items-center gap-3">
+                  <span className="flex items-center">Products</span>
+                </div>
+                <ul className="pl-4 absolute top-[20px] h-12 bg-[#010317] p-2">
+                  <li className="text-white my-1 cursor-pointer">Product 1</li>
+                  <li className="text-white my-1 cursor-pointer">Product 2</li>
+                  <li className="text-white my-1 cursor-pointer">Product 3</li>
+                </ul>
+              </li>
+              <li className="mb-3 flex item-center cursor-pointer">Buy</li>
+              <li className="mb-3 flex item-center cursor-pointer">
+                Acquiesce
+              </li>
+              <li className="mb-3 flex item-center cursor-pointer">
+                Contact Us
+              </li>
+            </ul>
+            <div className="flex justify-evenly items-center mt-4 gap-4">
+              <AiFillFacebook className="text-2xl text-white hover:text-theme_gold cursor-pointer" />
+              <AiOutlineTwitter className="text-2xl text-white hover:text-theme_gold cursor-pointer" />
+              <AiFillYoutube className="text-2xl text-white hover:text-theme_gold cursor-pointer" />
+              <AiOutlineInstagram className="text-2xl text-white hover:text-theme_gold cursor-pointer" />
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

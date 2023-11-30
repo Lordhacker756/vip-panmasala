@@ -11,12 +11,14 @@ export default function Home() {
       <Navbar />
       <Carousel />
 
-      <h1 className="text-3xl text-white mt-20 font-bold">Our Products</h1>
+      <h1 className="text-3xl text-white mt-20 font-bold">
+        Our Premiums Products
+      </h1>
       <Cards />
 
       <Ingredients />
 
-      <Video />
+      {/* <Video /> */}
 
       <Footer />
     </main>

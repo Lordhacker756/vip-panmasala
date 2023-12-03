@@ -30,13 +30,15 @@ export default function Navbar() {
     <>
       <nav className="w-full">
         <ul className="flex flex-col md:flex-row items-center justify-between px-4">
-          <li className="w-20 md:w-32 relative">
-            <Image
-              src={"/assets/logo.webp"}
-              alt="random"
-              width={100}
-              height={40}
-            />
+          <li className="w-20 md:w-32 relative cursor-pointer">
+            <Link href="/">
+              <Image
+                src={"/assets/logo.webp"}
+                alt="random"
+                width={100}
+                height={40}
+              />
+            </Link>
           </li>
           <li className="mt-4 md:mt-0">
             <ul className="flex gap-4 md:gap-8 items-center justify-center">
@@ -58,9 +60,6 @@ export default function Navbar() {
             <ul className="flex items-center justify-center gap-4">
               <li className="border-r-2 border-r-gray-500 px-4 cursor-pointer">
                 <CiUser className="text-2xl text-theme_gold hover:text-white" />
-              </li>
-              <li className="border-r-2 border-r-gray-500 px-4 cursor-pointer">
-                <TbBus className="text-2xl text-theme_gold hover:text-white" />
               </li>
               <li className="border-r-2 border-r-gray-500 px-4 cursor-pointer">
                 <CiSearch className="text-2xl text-theme_gold hover:text-white" />

@@ -7,13 +7,16 @@ function Acquiesce() {
     <div>
       <section className="text-gray-400  body-font">
         <div className="container px-5 py-24 mx-auto">
+          <h2 className="text-6xl text-theme_gold font-bold mb-20 text-center">
+            Steps to Acquiesce
+          </h2>
           <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-800 sm:flex-row flex-col">
             <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full text-theme_gold bg-gray-800 flex-shrink-0">
               <p className="text-5xl  ">1</p>
             </div>
             <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
               <h2 className="text-theme_gold text-lg title-font font-medium mb-2">
-                Select A Product
+                SELECT A PRODUCT
               </h2>
               <p className="leading-relaxed text-base">
                 Pick favorite pack size and tap Subscribe Now
@@ -91,8 +94,12 @@ function Acquiesce() {
         <Card img={"pdt5"} />
         <Card img={"pdt6"} />
       </div>
+
+      <h2 className="text-2xl text-theme_gold font-bold mt-20 text-center">
+        Acquesce Today
+      </h2>
       <section className="text-gray-400  body-font relative">
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container px-5 py-10 mx-auto">
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
             <div className="flex flex-wrap -m-2">
               <div className="p-2 w-1/2">
@@ -107,7 +114,7 @@ function Acquiesce() {
                     type="text"
                     id="name"
                     name="name"
-                    className="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-theme_gold focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
               </div>
@@ -123,7 +130,7 @@ function Acquiesce() {
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-theme_gold focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
               </div>
@@ -138,12 +145,12 @@ function Acquiesce() {
                   <textarea
                     id="message"
                     name="message"
-                    className="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                    className="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-theme_gold focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                   ></textarea>
                 </div>
               </div>
               <div className="p-2 w-full">
-                <button className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                <button className="flex mx-auto text-white bg-theme_gold border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
                   Acquiesce
                 </button>
               </div>

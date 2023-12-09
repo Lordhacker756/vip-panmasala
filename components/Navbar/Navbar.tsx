@@ -59,7 +59,9 @@ export default function Navbar() {
           <li className="my-4 md:mt-0">
             <ul className="flex items-center justify-center gap-4">
               <li className="border-r-2 border-r-gray-500 px-4 cursor-pointer">
-                <CiUser className="text-2xl text-theme_gold hover:text-white" />
+                <Link href="/login">
+                  <CiUser className="text-2xl text-theme_gold hover:text-white" />
+                </Link>
               </li>
               <li className="border-r-2 border-r-gray-500 px-4 cursor-pointer">
                 <CiSearch className="text-2xl text-theme_gold hover:text-white" />

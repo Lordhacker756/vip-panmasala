@@ -67,10 +67,12 @@ export default function Navbar() {
                 <CiSearch className="text-2xl text-theme_gold hover:text-white" />
               </li>
               <li className="border-r-2 border-r-gray-500 px-4 cursor-pointer relative">
-                <TiShoppingCart className="text-2xl text-theme_gold hover:text-white" />
-                <p className="px-[4px] absolute bg-white rounded-full text-black -top-2 right-2">
-                  0
-                </p>
+                <Link href="/cart">
+                  <TiShoppingCart className="text-2xl text-theme_gold hover:text-white" />
+                  <p className="px-[4px] absolute bg-white rounded-full text-black -top-2 right-2">
+                    0
+                  </p>
+                </Link>
               </li>
               <li className="px-2 cursor-pointer" onClick={toggleSideMenu}>
                 <RxHamburgerMenu className="text-2xl text-theme_gold hover:text-white" />

@@ -41,6 +41,7 @@ function CartItem(props: CartItemProps) {
               {" "}
               -{" "}
             </span>
+
             <input
               className="p-2 w-10 border border-theme_gold bg-[#010317] text-center justify-center items-center text-xs outline-none"
               type="number"

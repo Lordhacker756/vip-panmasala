@@ -6,10 +6,8 @@ import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 
 export default function StoreProvider({
-  count,
   children,
 }: {
-  count: number;
   children: React.ReactNode;
 }) {
   const storeRef = useRef<AppStore | null>(null);

@@ -14,9 +14,11 @@ import {
   AiOutlineInstagram,
 } from "react-icons/ai";
 import Link from "next/link";
+import { useAppSelector } from "@/lib/hooks";
 
 export default function Navbar() {
   const [showSideMenu, setShowSideMenu] = useState(false);
+  const { totalQuantity } = useAppSelector((state) => state);
 
   const toggleSideMenu = () => {
     setShowSideMenu(!showSideMenu);
@@ -69,8 +71,8 @@ export default function Navbar() {
               <li className="border-r-2 border-r-gray-500 px-4 cursor-pointer relative">
                 <Link href="/cart">
                   <TiShoppingCart className="text-2xl text-theme_gold hover:text-white" />
-                  <p className="px-[4px] absolute bg-white rounded-full text-black -top-2 right-2">
-                    0
+                  <p className="px-[4px] absolute text-xs bg-white rounded-full text-black -top-2 right-2">
+                    {totalQuantity}
                   </p>
                 </Link>
               </li>

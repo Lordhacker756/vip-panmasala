@@ -28,7 +28,7 @@ function Register() {
   } = useForm({
     resolver: yupResolver(validationSchema),
   });
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = console.log;
 
   return (
     <div className="flex items-start my-16 justify-center bg-black text-white">
